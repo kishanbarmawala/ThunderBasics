@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>NSJSONSerialization(TSCJSONSerialization) Category Reference</title>
+	<title>NSTimer(Blocks) Category Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -58,9 +58,9 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/JSONObjectWithFile:options:error:">+ JSONObjectWithFile:options:error:</option>
+		<option value="//api/name/scheduledTimerWithTimeInterval:block:repeats:">+ scheduledTimerWithTimeInterval:block:repeats:</option>
 		
-		<option value="//api/name/JSONObjectWithResource:ofType:options:error:">+ JSONObjectWithResource:ofType:options:error:</option>
+		<option value="//api/name/timerWithTimeInterval:block:repeats:">+ timerWithTimeInterval:block:repeats:</option>
 		
 	</optgroup>
 	
@@ -79,13 +79,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">NSJSONSerialization(TSCJSONSerialization) Category Reference</h1>
+					<h1 class="title">NSTimer(Blocks) Category Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>NSJSONSerialization+TSCJSONSerialization.h<br />NSJSONSerialization+TSCJSONSerialization.m</td>
+	<td>NSTimer+Blocks.h<br />NSTimer+Blocks.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -95,7 +95,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A category on NSJSONSerialization which implements wrapper methos for returning serialized JSON from a certain file in the system directory.</p>
+						<p>A useful category that adds block support for NSTimers</p>
 					</div>
 					
 					
@@ -111,8 +111,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/JSONObjectWithResource:ofType:options:error:" title="JSONObjectWithResource:ofType:options:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/JSONObjectWithResource:ofType:options:error:">+&nbsp;JSONObjectWithResource:ofType:options:error:</a></code>
+	<a name="//api/name/scheduledTimerWithTimeInterval:block:repeats:" title="scheduledTimerWithTimeInterval:block:repeats:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/scheduledTimerWithTimeInterval:block:repeats:">+&nbsp;scheduledTimerWithTimeInterval:block:repeats:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -122,12 +122,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns a Foundation object for a certain resource of a certain filetype</p>
+				<p>Schedules a timer to begin running immediately. Fires a block when the timer reaches it&rsquo;s designated interval</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)JSONObjectWithResource:(NSString *)<em>name</em> ofType:(NSString *)<em>type</em> options:(NSJSONReadingOptions)<em>opt</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)<em>inTimeInterval</em> block:(void ( ^ ) ( ))<em>inBlock</em> repeats:(BOOL)<em>inRepeats</em></code></div>
 
 		    
 			
@@ -136,23 +136,18 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>name</code></th>
-						<td><p>the filename of the file to be JSON serialized</p></td>
+						<th scope="row" class="argument-name"><code>inTimeInterval</code></th>
+						<td><p>How long after creation the block should be called</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>type</code></th>
-						<td><p>the file type of the file to be JSON serialized</p></td>
+						<th scope="row" class="argument-name"><code>inBlock</code></th>
+						<td><p>The block to call once the timer has reached it&rsquo;s designated interval</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>opt</code></th>
-						<td><p>the options to be used when serializing the resource</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>returns any errors that were come across whilst serializing</p></td>
+						<th scope="row" class="argument-name"><code>inRepeats</code></th>
+						<td><p>Whether or not the timer should repeat once fired</p></td>
 					</tr>
 				
 				</table>
@@ -166,7 +161,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a Foundation object for a certain resource of a certain filetype</p>
+				<p>Schedules a timer to begin running immediately. Fires a block when the timer reaches it&rsquo;s designated interval</p>
 			</div>
 			
 
@@ -177,15 +172,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSJSONSerialization+TSCJSONSerialization.h</code></p>
+				<p><code class="declared-in-ref">NSTimer+Blocks.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/JSONObjectWithFile:options:error:" title="JSONObjectWithFile:options:error:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/JSONObjectWithFile:options:error:">+&nbsp;JSONObjectWithFile:options:error:</a></code>
+	<a name="//api/name/timerWithTimeInterval:block:repeats:" title="timerWithTimeInterval:block:repeats:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timerWithTimeInterval:block:repeats:">+&nbsp;timerWithTimeInterval:block:repeats:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -195,12 +190,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns a Foundation object for a certain file in the system directory</p>
+				<p>Creates a timer that fires a block when the timer reaches it&rsquo;s designated interval</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)JSONObjectWithFile:(NSString *)<em>path</em> options:(NSJSONReadingOptions)<em>opt</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (instancetype)timerWithTimeInterval:(NSTimeInterval)<em>inTimeInterval</em> block:(void ( ^ ) ( ))<em>inBlock</em> repeats:(BOOL)<em>inRepeats</em></code></div>
 
 		    
 			
@@ -209,18 +204,18 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>path</code></th>
-						<td><p>the file path of the file to be JSON serialized</p></td>
+						<th scope="row" class="argument-name"><code>inTimeInterval</code></th>
+						<td><p>How long after creation the block should be called</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>opt</code></th>
-						<td><p>the options to be used when serializing the resource</p></td>
+						<th scope="row" class="argument-name"><code>inBlock</code></th>
+						<td><p>The block to call once the timer has reached it&rsquo;s designated interval</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>returns any errors that were come across whilst serializing</p></td>
+						<th scope="row" class="argument-name"><code>inRepeats</code></th>
+						<td><p>Whether or not the timer should repeat once fired</p></td>
 					</tr>
 				
 				</table>
@@ -234,7 +229,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a Foundation object for a certain file in the system directory</p>
+				<p>Creates a timer that fires a block when the timer reaches it&rsquo;s designated interval</p>
 			</div>
 			
 
@@ -245,7 +240,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">NSJSONSerialization+TSCJSONSerialization.h</code></p>
+				<p><code class="declared-in-ref">NSTimer+Blocks.h</code></p>
 			</div>
 			
 			

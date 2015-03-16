@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>UIColor(TSCColor) Category Reference</title>
+	<title>NSString(TSCEncoding) Category Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,13 +56,15 @@
 	
 
 	
-	<optgroup label="Class Methods">
+
+	
+	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/colorWithHexString:">+ colorWithHexString:</option>
+		<option value="//api/name/stringByStrippingHTML">- stringByStrippingHTML</option>
+		
+		<option value="//api/name/urlEncodedString">- urlEncodedString</option>
 		
 	</optgroup>
-	
-
 	
 	
 </select>
@@ -77,13 +79,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">UIColor(TSCColor) Category Reference</h1>
+					<h1 class="title">NSString(TSCEncoding) Category Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>UIColor+TSCColor.h<br />UIColor+TSCColor.m</td>
+	<td>NSString+TSCEncoding.h<br />NSString+TSCEncoding.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -93,7 +95,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A wrapper on <code>UIColor</code> which adds useful methods.</p>
+						<p>Adds additional encoding methods to NSString</p>
 					</div>
 					
 					
@@ -109,8 +111,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/colorWithHexString:" title="colorWithHexString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/colorWithHexString:">+&nbsp;colorWithHexString:</a></code>
+	<a name="//api/name/urlEncodedString" title="urlEncodedString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/urlEncodedString">&ndash;&nbsp;urlEncodedString</a></code>
 </h3>
 
 	<div class="method-info">
@@ -120,28 +122,21 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns a UIColor for a given hex string.</p>
+				<p>Encodes a string to remove characters incompatible with URL&rsquo;s</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (UIColor *)colorWithHexString:(NSString *)<em>hexString</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSString *)urlEncodedString</code></div>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>hexString</code></th>
-						<td><p>The hex string to return a <code>UIColor</code> instance of.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>a URL encoded string</p>
+			</div>
 			
 
 			
@@ -149,7 +144,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a UIColor for a given hex string.</p>
+				<p>Encodes a string to remove characters incompatible with URL&rsquo;s</p><div class="note"><p><strong>Note:</strong> Unsure why this exists, as <code>stringByAddingPercentEscapesUsingEncoding:</code> should have the same effect</p></div>
 			</div>
 			
 
@@ -160,7 +155,58 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UIColor+TSCColor.h</code></p>
+				<p><code class="declared-in-ref">NSString+TSCEncoding.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringByStrippingHTML" title="stringByStrippingHTML"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringByStrippingHTML">&ndash;&nbsp;stringByStrippingHTML</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Strips HTML from an NSString</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)stringByStrippingHTML</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A string with no HTML tags in it</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Strips HTML from an NSString</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NSString+TSCEncoding.h</code></p>
 			</div>
 			
 			

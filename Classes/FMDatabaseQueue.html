@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>UIColor(TSCColor) Category Reference</title>
+	<title>FMDatabaseQueue Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -48,19 +48,11 @@
 
 	
 	
-	<option value="tasks">Tasks</option>
-	
 	
 
 	
 	
 
-	
-	<optgroup label="Class Methods">
-		
-		<option value="//api/name/colorWithHexString:">+ colorWithHexString:</option>
-		
-	</optgroup>
 	
 
 	
@@ -77,13 +69,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">UIColor(TSCColor) Category Reference</h1>
+					<h1 class="title">FMDatabaseQueue Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>UIColor+TSCColor.h<br />UIColor+TSCColor.m</td>
+	<td>FMDatabaseQueue.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -93,83 +85,14 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A wrapper on <code>UIColor</code> which adds useful methods.</p>
+						<p>A key used to associate the FMDatabaseQueue object with the dispatch_queue_t it uses.
+This in turn is used for deadlock detection by seeing if inDatabase: is called on
+the queue&rsquo;s dispatch queue, which should not happen and causes a deadlock.</p>
 					</div>
 					
 					
 
 					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						
-
-						
-						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/colorWithHexString:" title="colorWithHexString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/colorWithHexString:">+&nbsp;colorWithHexString:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Returns a UIColor for a given hex string.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (UIColor *)colorWithHexString:(NSString *)<em>hexString</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>hexString</code></th>
-						<td><p>The hex string to return a <code>UIColor</code> instance of.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a UIColor for a given hex string.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UIColor+TSCColor.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-					</div>
 					
 					
 

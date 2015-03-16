@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>TSCObject Class Reference</title>
+	<title>TSCiCloudController Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,7 +56,7 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/identifier">identifier</option>
+		<option value="//api/name/appGroup">appGroup</option>
 		
 	</optgroup>
 	
@@ -64,7 +64,9 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/isSerialisable:">+ isSerialisable:</option>
+		<option value="//api/name/iCloudEnabled">+ iCloudEnabled</option>
+		
+		<option value="//api/name/sharedController">+ sharedController</option>
 		
 	</optgroup>
 	
@@ -72,11 +74,11 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/JSONRepresentation">- JSONRepresentation</option>
+		<option value="//api/name/initialSyncWithCompletionHandler:">- initialSyncWithCompletionHandler:</option>
 		
-		<option value="//api/name/initWithDictionary:">- initWithDictionary:</option>
+		<option value="//api/name/purge">- purge</option>
 		
-		<option value="//api/name/serialisableRepresentation">- serialisableRepresentation</option>
+		<option value="//api/name/updateValue:forKey:">- updateValue:forKey:</option>
 		
 	</optgroup>
 	
@@ -93,7 +95,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">TSCObject Class Reference</h1>
+					<h1 class="title">TSCiCloudController Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -102,7 +104,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>TSCObject.h<br />TSCObject.m</td>
+	<td>TSCiCloudController.h<br />TSCiCloudController.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,7 +114,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A subclass of NSObject which allows for easy JSON serialization</p>
+						<p>The iCloud controller is responsible for synchronising data across the users iCloud account, between devices. It both repsonsible for updating values as well as listening out for changes to values on other devices and updating them in the app</p>
 					</div>
 					
 					
@@ -124,216 +126,12 @@
 						
 
 						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/serialisableRepresentation" title="serialisableRepresentation"></a>
-	<h3 class="method-title"><code><a href="#//api/name/serialisableRepresentation">&ndash;&nbsp;serialisableRepresentation</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Serialises the object to an object which can be sent using a web request.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSDictionary *)serialisableRepresentation</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Serialises the object to an object which can be sent using a web request.</p><p>As a base class <code>TSCObject</code> returns an <code>NSDictionary</code> containing all the properties on your subclass. Override this to implement custom serialisation.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">TSCObject.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/JSONRepresentation" title="JSONRepresentation"></a>
-	<h3 class="method-title"><code><a href="#//api/name/JSONRepresentation">&ndash;&nbsp;JSONRepresentation</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Returns a pretty printed JSON representation of the <code>TSCObject</code>.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSData *)JSONRepresentation</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a pretty printed JSON representation of the <code>TSCObject</code>.</p><p>This method is useful for creating JSON representations of your model objects for use with a JSON API.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">TSCObject.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/isSerialisable:" title="isSerialisable:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isSerialisable:">+&nbsp;isSerialisable:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Returns whether an object is serialisable by default.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (BOOL)isSerialisable:(id)<em>object</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>object</code></th>
-						<td><p>The object to test for serialisability.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns whether an object is serialisable by default.</p><p>This method is useful for creating JSON representations of your model objects for use with a JSON API.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">TSCObject.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/identifier" title="identifier"></a>
-	<h3 class="method-title"><code><a href="#//api/name/identifier">&nbsp;&nbsp;identifier</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The unique identifier for the <code>TSCObject</code>.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *identifier</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This should always be non-nil.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">TSCObject.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
 						
 
-						<a title="Initialization" name="task_Initialization"></a>
-						<h2 class="task-title">Initialization</h2>
-
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/initWithDictionary:" title="initWithDictionary:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithDictionary:">&ndash;&nbsp;initWithDictionary:</a></code>
+	<a name="//api/name/iCloudEnabled" title="iCloudEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/iCloudEnabled">+&nbsp;iCloudEnabled</a></code>
 </h3>
 
 	<div class="method-info">
@@ -343,12 +141,109 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Initializes a <code>TSCObject</code> from it&rsquo;s dictionary representation.</p>
+				<p>Checks if iCloud is enabled on the current device</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithDictionary:(NSDictionary *)<em>dictionary</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)iCloudEnabled</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if iCloud is enabled</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Checks if iCloud is enabled on the current device</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCiCloudController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sharedController" title="sharedController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedController">+&nbsp;sharedController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A shared instance of the iCloud controller</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (TSCiCloudController *)sharedController</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A shared instance of the iCloud controller</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCiCloudController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateValue:forKey:" title="updateValue:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateValue:forKey:">&ndash;&nbsp;updateValue:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sets a new value for key and syncronises it with iCloud</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateValue:(id)<em>value</em> forKey:(NSString *)<em>key</em></code></div>
 
 		    
 			
@@ -357,8 +252,14 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>dictionary</code></th>
-						<td><p>The dictionary to initialise the object with.</p></td>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The NSObject to add to the store</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key to assign the value to in the store
+*</p></td>
 					</tr>
 				
 				</table>
@@ -372,7 +273,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initializes a <code>TSCObject</code> from it&rsquo;s dictionary representation.</p><p>As a base class <code>TSCObject</code> this uses objective-c runtime to set properties on all objects inheriting from <code>TSCObject</code>.</p>
+				<p>Sets a new value for key and syncronises it with iCloud</p>
 			</div>
 			
 
@@ -383,7 +284,157 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">TSCObject.h</code></p>
+				<p><code class="declared-in-ref">TSCiCloudController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/purge" title="purge"></a>
+	<h3 class="method-title"><code><a href="#//api/name/purge">&ndash;&nbsp;purge</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Completely clears anything stored in the iCloud UIUbiquitousKeyStore</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)purge</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Completely clears anything stored in the iCloud UIUbiquitousKeyStore</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCiCloudController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initialSyncWithCompletionHandler:" title="initialSyncWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initialSyncWithCompletionHandler:">&ndash;&nbsp;initialSyncWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Requests the initial sync for iCloud upon device install</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)initialSyncWithCompletionHandler:(TSCiCloudSyncHandler)<em>handler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>handler</code></th>
+						<td><p>The block of code to be run once the initial sync has been performed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Requests the initial sync for iCloud upon device install</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCiCloudController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/appGroup" title="appGroup"></a>
+	<h3 class="method-title"><code><a href="#//api/name/appGroup">&nbsp;&nbsp;appGroup</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The identifier of the app group that should be used to save and read user defaults</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *appGroup</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The identifier of the app group that should be used to save and read user defaults</p><p>If this property is nil, standard user defaults will be used</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCiCloudController.h</code></p>
 			</div>
 			
 			

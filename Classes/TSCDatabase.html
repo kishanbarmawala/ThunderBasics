@@ -1,174 +1,124 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>TSCDatabase Class Reference</title>
-		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
-		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 963)" />
-	</head>
-	<body>
-		<header id="top_header">
-			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">ThunderBasics </a></h1>
-				<a id="developerHome" href="../index.html">3 SIDED CUBE DESIGN LTD</a>
-			</div>
+<head>
+	<meta charset="utf-8">
+
+	<title>TSCDatabase Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
 			
-			<div id="title" role="banner">
-				<h1 class="hideInXcode">TSCDatabase Class Reference</h1>
-			</div>
-			<ul id="headerButtons" role="toolbar">
-				<li id="toc_button">
-					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
-				</li>
-				<li id="jumpto_button" role="navigation">
-					<select id="jumpTo">
+			<h1 id="library-title">
+				<a href="../index.html">ThunderBasics </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">3 SIDED CUBE DESIGN LTD.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
 	<option value="overview">Overview</option>
 	
-	
+
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
+
 	
 	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/cachedDatabasePath">cachedDatabasePath</option>
+		
+		<option value="//api/name/databaseCacheDirectory">databaseCacheDirectory</option>
+		
+		<option value="//api/name/databasePath">databasePath</option>
+		
+	</optgroup>
 	
-	<option value="properties">Properties</option>
+
 	
-	<option value="//api/name/cachedDatabasePath">&nbsp;&nbsp;&nbsp;&nbsp;cachedDatabasePath</option>
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/databaseWithPath:">+ databaseWithPath:</option>
+		
+		<option value="//api/name/registerClass:toTableName:">+ registerClass:toTableName:</option>
+		
+	</optgroup>
 	
-	<option value="//api/name/databaseCacheDirectory">&nbsp;&nbsp;&nbsp;&nbsp;databaseCacheDirectory</option>
+
 	
-	<option value="//api/name/databasePath">&nbsp;&nbsp;&nbsp;&nbsp;databasePath</option>
-	
-	
-	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/databaseWithPath:">&nbsp;&nbsp;&nbsp;&nbsp;+ databaseWithPath:</option>
-	
-	<option value="//api/name/registerClass:toTableName:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerClass:toTableName:</option>
-	
-	
-	
-	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/initWithDatabasePath:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithDatabasePath:</option>
-	
-	<option value="//api/name/insertObject:">&nbsp;&nbsp;&nbsp;&nbsp;- insertObject:</option>
-	
-	<option value="//api/name/objectsOfClass:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsOfClass:</option>
-	
-	<option value="//api/name/objectsOfClass:withSQL:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsOfClass:withSQL:</option>
-	
-	<option value="//api/name/removeObject:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObject:</option>
-	
-	<option value="//api/name/updateObject:">&nbsp;&nbsp;&nbsp;&nbsp;- updateObject:</option>
-	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithDatabasePath:">- initWithDatabasePath:</option>
+		
+		<option value="//api/name/insertObject:">- insertObject:</option>
+		
+		<option value="//api/name/objectsOfClass:">- objectsOfClass:</option>
+		
+		<option value="//api/name/objectsOfClass:withSQL:">- objectsOfClass:withSQL:</option>
+		
+		<option value="//api/name/removeObject:">- removeObject:</option>
+		
+		<option value="//api/name/updateObject:">- updateObject:</option>
+		
+	</optgroup>
 	
 	
 </select>
-				</li>
-			</ul>
-		</header>
-		<nav id="tocContainer" class="isShowingTOC">
-			<ul id="toc" role="tree">
-				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
 
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TSCDatabase Class Reference</h1>
 
-
-
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initializing a TSCDatabase Object">Initializing a TSCDatabase Object</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Database path properties">Database path properties</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Updating the database">Updating the database</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieving objects from the database">Retrieving objects from the database</a></span></li>
-	
-</ul></li>
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cachedDatabasePath">cachedDatabasePath</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/databaseCacheDirectory">databaseCacheDirectory</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/databasePath">databasePath</a></span></li>
-	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/databaseWithPath:">databaseWithPath:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerClass:toTableName:">registerClass:toTableName:</a></span></li>
-	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithDatabasePath:">initWithDatabasePath:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/insertObject:">insertObject:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsOfClass:">objectsOfClass:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsOfClass:withSQL:">objectsOfClass:withSQL:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObject:">removeObject:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateObject:">updateObject:</a></span></li>
-	
-</ul></li>
-
-
-			</ul>
-		</nav>
-		<article>
-			<div id="contents" class="isShowingTOC" role="main">
-				<a title="TSCDatabase Class Reference" name="top"></a>
-				<div class="main-navigation navigation-top">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="header">
-					<div class="section-header">
-						<h1 class="title title-header">TSCDatabase Class Reference</h1>
-					</div>		
-				</div>
-				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<th>Inherits from</th>
+	<td>NSObject</td>
 </tr><tr>
-	<td class="specification-title">Declared in</td>
-	<td class="specification-value">TSCDatabase.h</td>
+	<th>Declared in</th>
+	<td>TSCDatabase.h<br />TSCDatabase.m</td>
 </tr>
 						</tbody></table></div>
 					
-                    
+
                     
 					
 					<div class="section section-overview">
@@ -185,781 +135,667 @@
 					</div>
 					
 					
-					
+
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
-						
+
 						<a title="Initializing a TSCDatabase Object" name="task_Initializing a TSCDatabase Object"></a>
-						<h3 class="subsubtitle task-title">Initializing a TSCDatabase Object</h3>
+						<h2 class="task-title">Initializing a TSCDatabase Object</h2>
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/databaseWithPath:">+&nbsp;databaseWithPath:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/initWithDatabasePath:">&ndash;&nbsp;initWithDatabasePath:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Database path properties" name="task_Database path properties"></a>
-						<h3 class="subsubtitle task-title">Database path properties</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/databasePath">&nbsp;&nbsp;databasePath</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/cachedDatabasePath">&nbsp;&nbsp;cachedDatabasePath</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/databaseCacheDirectory">&nbsp;&nbsp;databaseCacheDirectory</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li>
-						</ul>
-						
-						
-						<a title="Updating the database" name="task_Updating the database"></a>
-						<h3 class="subsubtitle task-title">Updating the database</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/registerClass:toTableName:">+&nbsp;registerClass:toTableName:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/insertObject:">&ndash;&nbsp;insertObject:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/removeObject:">&ndash;&nbsp;removeObject:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/updateObject:">&ndash;&nbsp;updateObject:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Retrieving objects from the database" name="task_Retrieving objects from the database"></a>
-						<h3 class="subsubtitle task-title">Retrieving objects from the database</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/objectsOfClass:">&ndash;&nbsp;objectsOfClass:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/objectsOfClass:withSQL:">&ndash;&nbsp;objectsOfClass:withSQL:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-					</div>
-					
-					
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/cachedDatabasePath" title="cachedDatabasePath"></a>
-	<h3 class="subsubtitle method-title">cachedDatabasePath</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The path of the cached database.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *cachedDatabasePath</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The database is moved to a cached location where in which file editing is allowed. This keeps track of where that cached version is kept.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/databaseCacheDirectory" title="databaseCacheDirectory"></a>
-	<h3 class="subsubtitle method-title">databaseCacheDirectory</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The directory which database caches are stored in.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *databaseCacheDirectory</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/databasePath" title="databasePath"></a>
-	<h3 class="subsubtitle method-title">databasePath</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The path of the database.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *databasePath</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/databaseWithPath:" title="databaseWithPath:"></a>
-	<h3 class="subsubtitle method-title">databaseWithPath:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Initializes the <code>TSCDatabaseObject</code></p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/databaseWithPath:">+&nbsp;databaseWithPath:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)databaseWithPath:(NSString *)<em>path</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>path</em></dt>
-			<dd><p>The path to the database which should be loaded.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Initializes the <code>TSCDatabaseObject</code></p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/registerClass:toTableName:" title="registerClass:toTableName:"></a>
-	<h3 class="subsubtitle method-title">registerClass:toTableName:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Registers an object class to a certain table within the database.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)registerClass:(Class)<em>classToRegister</em> toTableName:(NSString *)<em>tableName</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>classToRegister</em></dt>
-			<dd><p>The class of object which should be registered to the specified table name.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>tableName</em></dt>
-			<dd><p>The table for which the specified class should be added (or removed e.t.c.) to.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Registers an object class to a certain table within the database.</p><p>Any class of object must be registered with this method before it is used in a <code>TSCDatabase</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithDatabasePath:" title="initWithDatabasePath:"></a>
-	<h3 class="subsubtitle method-title">initWithDatabasePath:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Initializes the <code>TSCDatabaseObject</code></p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)initWithDatabasePath:(NSString *)<em>path</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>path</em></dt>
-			<dd><p>The path to the database which should be loaded.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Initializes the <code>TSCDatabaseObject</code></p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/insertObject:" title="insertObject:"></a>
-	<h3 class="subsubtitle method-title">insertObject:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Inserts an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> into the currently loaded database.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)insertObject:(TSCObject *)<em>object</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>object</em></dt>
-			<dd><p>The object to insert into the database.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Inserts an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> into the currently loaded database.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/objectsOfClass:" title="objectsOfClass:"></a>
-	<h3 class="subsubtitle method-title">objectsOfClass:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns an array of all the objects from the currently loaded database of a certain class.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsOfClass:(Class)<em>classToSelect</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>classToSelect</em></dt>
-			<dd><p>The class of object to be returned in the array.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns an array of all the objects from the currently loaded database of a certain class.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/objectsOfClass:withSQL:" title="objectsOfClass:withSQL:"></a>
-	<h3 class="subsubtitle method-title">objectsOfClass:withSQL:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns an array of all the objects from the currently loaded database of a certain class which correspond to an addition sql query. This can be used for example to get all of the instances of an object which correspond to a certain identifying parameter.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsOfClass:(Class)<em>classToSelect</em> withSQL:(NSString *)<em>sql</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>classToSelect</em></dt>
-			<dd><p>The class of object to be returned in the array.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>sql</em></dt>
-			<dd><p>An extra sql query which can be used to refine the objects which are returned.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns an array of all the objects from the currently loaded database of a certain class which correspond to an addition sql query. This can be used for example to get all of the instances of an object which correspond to a certain identifying parameter.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/removeObject:" title="removeObject:"></a>
-	<h3 class="subsubtitle method-title">removeObject:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Removes an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> from the currently loaded database.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)removeObject:(TSCObject *)<em>object</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>object</em></dt>
-			<dd><p>The object to remove from the database.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Removes an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> from the currently loaded database.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/updateObject:" title="updateObject:"></a>
-	<h3 class="subsubtitle method-title">updateObject:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Updates an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> in the currently loaded database.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)updateObject:(TSCObject *)<em>object</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>object</em></dt>
-			<dd><p>The object to edit in the database.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Updates an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> in the currently loaded database.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TSCDatabase.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-                    
-                    
-				</div>
-				<div class="main-navigation navigation-bottom">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="footer">
-					<hr />
-					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 3 SIDED CUBE DESIGN LTD. All rights reserved. (Last updated: 2014-11-11)</span><br />
-						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
-						
-					</div>
-				</div>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes the <code>TSCDatabaseObject</code></p>
 			</div>
-		</article>
-		<script type="text/javascript">
-			function jumpToChange()
-			{
-				window.location.hash = this.options[this.selectedIndex].value;
-			}
 			
-			function toggleTOC()
-			{
-				var contents = document.getElementById('contents');
-				var tocContainer = document.getElementById('tocContainer');
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)databaseWithPath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
 				
-				if (this.getAttribute('class') == 'open')
-				{
-					this.setAttribute('class', '');
-					contents.setAttribute('class', '');
-					tocContainer.setAttribute('class', '');
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path to the database which should be loaded.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes the <code>TSCDatabaseObject</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithDatabasePath:" title="initWithDatabasePath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithDatabasePath:">&ndash;&nbsp;initWithDatabasePath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes the <code>TSCDatabaseObject</code></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithDatabasePath:(NSString *)<em>path</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>path</code></th>
+						<td><p>The path to the database which should be loaded.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initializes the <code>TSCDatabaseObject</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Database path properties" name="task_Database path properties"></a>
+						<h2 class="task-title">Database path properties</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/databasePath" title="databasePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/databasePath">&nbsp;&nbsp;databasePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The path of the database.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *databasePath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cachedDatabasePath" title="cachedDatabasePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cachedDatabasePath">&nbsp;&nbsp;cachedDatabasePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The path of the cached database.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *cachedDatabasePath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The database is moved to a cached location where in which file editing is allowed. This keeps track of where that cached version is kept.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/databaseCacheDirectory" title="databaseCacheDirectory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/databaseCacheDirectory">&nbsp;&nbsp;databaseCacheDirectory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The directory which database caches are stored in.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *databaseCacheDirectory</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Updating the database" name="task_Updating the database"></a>
+						<h2 class="task-title">Updating the database</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/registerClass:toTableName:" title="registerClass:toTableName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerClass:toTableName:">+&nbsp;registerClass:toTableName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Registers an object class to a certain table within the database.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)registerClass:(Class)<em>classToRegister</em> toTableName:(NSString *)<em>tableName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>classToRegister</code></th>
+						<td><p>The class of object which should be registered to the specified table name.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tableName</code></th>
+						<td><p>The table for which the specified class should be added (or removed e.t.c.) to.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Registers an object class to a certain table within the database.</p><p>Any class of object must be registered with this method before it is used in a <code>TSCDatabase</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insertObject:" title="insertObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insertObject:">&ndash;&nbsp;insertObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Inserts an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> into the currently loaded database.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)insertObject:(TSCObject *)<em>object</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object to insert into the database.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Inserts an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> into the currently loaded database.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeObject:" title="removeObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeObject:">&ndash;&nbsp;removeObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> from the currently loaded database.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeObject:(TSCObject *)<em>object</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object to remove from the database.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Removes an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> from the currently loaded database.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateObject:" title="updateObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateObject:">&ndash;&nbsp;updateObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Updates an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> in the currently loaded database.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)updateObject:(TSCObject *)<em>object</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The object to edit in the database.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Updates an object subclassing from <a href="../Classes/TSCObject.html"><code>TSCObject</code></a> in the currently loaded database.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Retrieving objects from the database" name="task_Retrieving objects from the database"></a>
+						<h2 class="task-title">Retrieving objects from the database</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/objectsOfClass:" title="objectsOfClass:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectsOfClass:">&ndash;&nbsp;objectsOfClass:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of all the objects from the currently loaded database of a certain class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)objectsOfClass:(Class)<em>classToSelect</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>classToSelect</code></th>
+						<td><p>The class of object to be returned in the array.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an array of all the objects from the currently loaded database of a certain class.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectsOfClass:withSQL:" title="objectsOfClass:withSQL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectsOfClass:withSQL:">&ndash;&nbsp;objectsOfClass:withSQL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of all the objects from the currently loaded database of a certain class which correspond to an addition sql query. This can be used for example to get all of the instances of an object which correspond to a certain identifying parameter.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)objectsOfClass:(Class)<em>classToSelect</em> withSQL:(NSString *)<em>sql</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>classToSelect</code></th>
+						<td><p>The class of object to be returned in the array.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sql</code></th>
+						<td><p>An extra sql query which can be used to refine the objects which are returned.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an array of all the objects from the currently loaded database of a certain class which correspond to an addition sql query. This can be used for example to get all of the instances of an object which correspond to a certain identifying parameter.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCDatabase.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
 					
-					window.name = "hideTOC";
-				}
-				else
-				{
-					this.setAttribute('class', 'open');
-					contents.setAttribute('class', 'isShowingTOC');
-					tocContainer.setAttribute('class', 'isShowingTOC');
 					
-					window.name = "";
-				}
-				return false;
-			}
-			
-			function toggleTOCEntryChildren(e)
-			{
-				e.stopPropagation();
-				var currentClass = this.getAttribute('class');
-				if (currentClass == 'children') {
-					this.setAttribute('class', 'children open');
-				}
-				else if (currentClass == 'children open') {
-					this.setAttribute('class', 'children');
-				}
-				return false;
-			}
-			
-			function tocEntryClick(e)
-			{
-				e.stopPropagation();
-				return true;
-			}
-			
-			function init()
-			{
-				var selectElement = document.getElementById('jumpTo');
-				selectElement.addEventListener('change', jumpToChange, false);
-				
-				var tocButton = document.getElementById('table_of_contents');
-				tocButton.addEventListener('click', toggleTOC, false);
-				
-				var taskTreeItem = document.getElementById('task_treeitem');
-				if (taskTreeItem.getElementsByTagName('li').length > 0)
-				{
-					taskTreeItem.setAttribute('class', 'children');
-					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
-				}
-				
-				var tocList = document.getElementById('toc');
-				
-				var tocEntries = tocList.getElementsByTagName('li');
-				for (var i = 0; i < tocEntries.length; i++) {
-					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
-				}
-				
-				var tocLinks = tocList.getElementsByTagName('a');
-				for (var i = 0; i < tocLinks.length; i++) {
-					tocLinks[i].addEventListener('click', tocEntryClick, false);
-				}
-				
-				if (window.name == "hideTOC") {
-					toggleTOC.call(tocButton);
-				}
-			}
-			
-			window.onload = init;
-			
-			// If showing in Xcode, hide the TOC and Header
-			if (navigator.userAgent.match(/xcode/i)) {
-				document.getElementById("contents").className = "hideInXcode"
-				document.getElementById("tocContainer").className = "hideInXcode"
-				document.getElementById("top_header").className = "hideInXcode"
-			}
-			
-		</script>
-	</body>
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 3 SIDED CUBE DESIGN LTD. All rights reserved. Updated: 2015-03-16</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
 </html>

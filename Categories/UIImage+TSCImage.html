@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>UIColor(TSCColor) Category Reference</title>
+	<title>UIImage(TSCImage) Category Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,13 +56,13 @@
 	
 
 	
-	<optgroup label="Class Methods">
+
+	
+	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/colorWithHexString:">+ colorWithHexString:</option>
+		<option value="//api/name/pixelColorForX:y:">- pixelColorForX:y:</option>
 		
 	</optgroup>
-	
-
 	
 	
 </select>
@@ -77,13 +77,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">UIColor(TSCColor) Category Reference</h1>
+					<h1 class="title">UIImage(TSCImage) Category Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>UIColor+TSCColor.h<br />UIColor+TSCColor.m</td>
+	<td>UIImage+TSCImage.h<br />UIImage+TSCImage.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -93,7 +93,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A wrapper on <code>UIColor</code> which adds useful methods.</p>
+						<p>This category adds methods for UIImage such as the ability to identify an individual pixel in the image</p>
 					</div>
 					
 					
@@ -109,8 +109,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/colorWithHexString:" title="colorWithHexString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/colorWithHexString:">+&nbsp;colorWithHexString:</a></code>
+	<a name="//api/name/pixelColorForX:y:" title="pixelColorForX:y:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pixelColorForX:y:">&ndash;&nbsp;pixelColorForX:y:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -120,12 +120,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns a UIColor for a given hex string.</p>
+				<p>Looks up a specific pixel in an image and gets it&rsquo;s color</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (UIColor *)colorWithHexString:(NSString *)<em>hexString</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (UIColor *)pixelColorForX:(NSInteger)<em>x</em> y:(NSInteger)<em>y</em></code></div>
 
 		    
 			
@@ -134,8 +134,13 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>hexString</code></th>
-						<td><p>The hex string to return a <code>UIColor</code> instance of.</p></td>
+						<th scope="row" class="argument-name"><code>x</code></th>
+						<td><p>The pixel to select on the horizontal axis</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>y</code></th>
+						<td><p>The pixel to select on the vertical axis</p></td>
 					</tr>
 				
 				</table>
@@ -143,13 +148,18 @@
 			
 
 			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The color of the selected pixel</p>
+			</div>
+			
 
 			
 
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a UIColor for a given hex string.</p>
+				<p>Looks up a specific pixel in an image and gets it&rsquo;s color</p>
 			</div>
 			
 
@@ -160,7 +170,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UIColor+TSCColor.h</code></p>
+				<p><code class="declared-in-ref">UIImage+TSCImage.h</code></p>
 			</div>
 			
 			

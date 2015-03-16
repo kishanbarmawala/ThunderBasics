@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>TSCAlertActionStyle Constants Reference</title>
+	<title>NSDateRangeOptions Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">TSCAlertActionStyle Constants Reference</h1>
+					<h1 class="title">NSDateRangeOptions Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>TSCAlertAction.h</td>
+	<td>NSDate+TSCDate.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,11 +75,11 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">TSCAlertActionStyle</h3>
+                    <h3 class="subsubtitle method-title">NSDateRangeOptions</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>The styles available for a <a href="../Classes/TSCAlertAction.html"><code>TSCAlertAction</code></a></p>
+                        <p>Options available when calculating a date range</p>
 					</div>
 					
 					
@@ -87,13 +87,17 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, TSCAlertActionStyle ) {<br>
+                        <code>typedef NS_OPTIONS(NSInteger, NSDateRangeOptions ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">TSCAlertActionStyleDefault</a> = 0,<br>
+                            &nbsp;&nbsp; <a href="">NSDateRangeOptionIncludeOriginalDay</a> = 1 &lt; &lt; 1,<br>
                             
-                            &nbsp;&nbsp; <a href="">TSCAlertActionStyleCancel</a> = 1,<br>
+                            &nbsp;&nbsp; <a href="">NSDateRangeOptionIncludeOriginalWeek</a> = 1 &lt; &lt; 2,<br>
                             
-                            &nbsp;&nbsp; <a href="">TSCAlertActionStyleDestructive</a> = 2,<br>
+                            &nbsp;&nbsp; <a href="">NSDateRangeOptionIncludeOriginalMonth</a> = 1 &lt; &lt; 3,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSDateRangeOptionDirectionFuture</a> = 1 &lt; &lt; 6,<br>
+                            
+                            &nbsp;&nbsp; <a href="">NSDateRangeOptionWeekStartsOnSunday</a> = 1 &lt; &lt; 7,<br>
                             
                             };</code>
                     
@@ -103,11 +107,11 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="TSCAlertActionStyleDefault"></a><code>TSCAlertActionStyleDefault</code></dt>
+                            <dt><a name="" title="NSDateRangeOptionIncludeOriginalDay"></a><code>NSDateRangeOptionIncludeOriginalDay</code></dt>
 <dd>
 
 
-<p>The default style for a <a href="../Classes/TSCAlertAction.html"><code>TSCAlertAction</code></a></p>
+<p>Include the original day in the date calculation</p>
 
 
 
@@ -115,16 +119,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">TSCAlertAction.h</code>.
+		Declared In <code class="declared-in-ref">NSDate+TSCDate.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="TSCAlertActionStyleCancel"></a><code>TSCAlertActionStyleCancel</code></dt>
+                            <dt><a name="" title="NSDateRangeOptionIncludeOriginalWeek"></a><code>NSDateRangeOptionIncludeOriginalWeek</code></dt>
 <dd>
 
 
-<p>The &lsquo;cancel button&rsquo; style for a <a href="../Classes/TSCAlertAction.html"><code>TSCAlertAction</code></a></p>
+<p>Include the original week in the date calculation</p>
 
 
 
@@ -132,16 +136,16 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">TSCAlertAction.h</code>.
+		Declared In <code class="declared-in-ref">NSDate+TSCDate.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="TSCAlertActionStyleDestructive"></a><code>TSCAlertActionStyleDestructive</code></dt>
+                            <dt><a name="" title="NSDateRangeOptionIncludeOriginalMonth"></a><code>NSDateRangeOptionIncludeOriginalMonth</code></dt>
 <dd>
 
 
-<p>The &lsquo;destructive button&rsquo; style for a <a href="../Classes/TSCAlertAction.html"><code>TSCAlertAction</code></a></p>
+<p>Include the original month in the date calculation</p>
 
 
 
@@ -149,7 +153,41 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">TSCAlertAction.h</code>.
+		Declared In <code class="declared-in-ref">NSDate+TSCDate.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSDateRangeOptionDirectionFuture"></a><code>NSDateRangeOptionDirectionFuture</code></dt>
+<dd>
+
+
+<p>Unknown</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSDate+TSCDate.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="NSDateRangeOptionWeekStartsOnSunday"></a><code>NSDateRangeOptionWeekStartsOnSunday</code></dt>
+<dd>
+
+
+<p>Specifies that the week starts on a Sunday, not a Monday</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">NSDate+TSCDate.h</code>.
 	</p>
 	
 </dd>
@@ -166,7 +204,7 @@
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle">Declared In</h4>
-                        <p><code class="declared-in-ref">TSCAlertAction.h</code></p>
+                        <p><code class="declared-in-ref">NSDate+TSCDate.h</code></p>
                     </div>
                     
                     

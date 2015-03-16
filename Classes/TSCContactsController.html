@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>TSCContactsController Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">ThunderBasics </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">3 SIDED CUBE DESIGN LTD.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/TSCPeoplePickerPersonSelectedCompletion">TSCPeoplePickerPersonSelectedCompletion</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addressbookIdsforPeople:">- addressbookIdsforPeople:</option>
+		
+		<option value="//api/name/peopleForArrayOfIdentifiers:">- peopleForArrayOfIdentifiers:</option>
+		
+		<option value="//api/name/personViewControllerForRecordID:">- personViewControllerForRecordID:</option>
+		
+		<option value="//api/name/personViewControllerForRecordNumber:">- personViewControllerForRecordNumber:</option>
+		
+		<option value="//api/name/personWithRecordID:">- personWithRecordID:</option>
+		
+		<option value="//api/name/personWithRecordNumber:">- personWithRecordNumber:</option>
+		
+		<option value="//api/name/personWithRecordRef:">- personWithRecordRef:</option>
+		
+		<option value="//api/name/presentPeoplePickerWithCompletion:inViewController:">- presentPeoplePickerWithCompletion:inViewController:</option>
+		
+		<option value="//api/name/presentPersonWithRecordNumber:inViewController:">- presentPersonWithRecordNumber:inViewController:</option>
+		
+		<option value="//api/name/presentPersonwithRecordID:inViewController:">- presentPersonwithRecordID:inViewController:</option>
+		
+		<option value="//api/name/recordIDForNumber:">- recordIDForNumber:</option>
+		
+		<option value="//api/name/recordRefForRecordID:">- recordRefForRecordID:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TSCContactsController Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>TSCContactsController.h<br />TSCContactsController.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The contacts controller is responsible for handling all interaction with the users address book. There are convenience methods for giving the user the option to select a contact, automatically handling authentication and returning an RCHPerson in the block</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/TSCPeoplePickerPersonSelectedCompletion" title="TSCPeoplePickerPersonSelectedCompletion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TSCPeoplePickerPersonSelectedCompletion">&nbsp;&nbsp;TSCPeoplePickerPersonSelectedCompletion</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This property keeps reference to the completion block so that it can be called when a contact has been succesfully selected</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) void ( ^ ) ( TSCPerson *selectedPerson , NSError *error ) TSCPeoplePickerPersonSelectedCompletion</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/presentPeoplePickerWithCompletion:inViewController:" title="presentPeoplePickerWithCompletion:inViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentPeoplePickerWithCompletion:inViewController:">&ndash;&nbsp;presentPeoplePickerWithCompletion:inViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Presents a picker to select a contact with a completion</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)presentPeoplePickerWithCompletion:(TSCPeoplePickerPersonSelectedCompletion)<em>completion</em> inViewController:(UIViewController *)<em>presentingViewController</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>The completion block to be fired once a user has selected a contact or cancelled</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>presentingViewController</code></th>
+						<td><p>The view controller that wishes to present the picker</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Presents a picker to select a contact with a completion</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/personWithRecordNumber:" title="personWithRecordNumber:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/personWithRecordNumber:">&ndash;&nbsp;personWithRecordNumber:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Generates a <code>RCHPerson</code> object for the given NSNumber</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (TSCPerson *)personWithRecordNumber:(NSNumber *)<em>number</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>number</code></th>
+						<td><p>The number that references a record ID in the users contacts</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>RCHPerson</code> filled with contact information</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Generates a <code>RCHPerson</code> object for the given NSNumber</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/personWithRecordID:" title="personWithRecordID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/personWithRecordID:">&ndash;&nbsp;personWithRecordID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Generates a <code>RCHPerson</code> object for the given <code>ABRecordID</code></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (TSCPerson *)personWithRecordID:(ABRecordID)<em>identifier</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>The <code>ABRecordID</code> that references a person in the users contacts</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>RCHPerson</code> filled with contact information</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Generates a <code>RCHPerson</code> object for the given <code>ABRecordID</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/personWithRecordRef:" title="personWithRecordRef:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/personWithRecordRef:">&ndash;&nbsp;personWithRecordRef:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Generated a <code>RCHPerson</code> object for the record reference</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (TSCPerson *)personWithRecordRef:(ABRecordRef)<em>ref</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ref</code></th>
+						<td><p>The <code>ABRecordRef</code> to convert into an RCHPerson</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>RCHPerson</code> filled with contact information</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Generated a <code>RCHPerson</code> object for the record reference</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recordIDForNumber:" title="recordIDForNumber:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recordIDForNumber:">&ndash;&nbsp;recordIDForNumber:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts a <code>NSNumber</code> to a <code>ABRecordID</code></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ABRecordID)recordIDForNumber:(NSNumber *)<em>number</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>number</code></th>
+						<td><p>The number to convert</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>ABRecordID</code> from the NSNumber</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Converts a <code>NSNumber</code> to a <code>ABRecordID</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/recordRefForRecordID:" title="recordRefForRecordID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recordRefForRecordID:">&ndash;&nbsp;recordRefForRecordID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts a <code>ABRecordID</code> into a <code>ABRecordRef</code></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ABRecordRef)recordRefForRecordID:(ABRecordID)<em>recordID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>recordID</code></th>
+						<td><p>The <code>ABRecordID</code> to look up in the address book and extract a contact for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <code>ABRecordRef</code> representation of the record ID</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Converts a <code>ABRecordID</code> into a <code>ABRecordRef</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/personViewControllerForRecordNumber:" title="personViewControllerForRecordNumber:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/personViewControllerForRecordNumber:">&ndash;&nbsp;personViewControllerForRecordNumber:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Generates a <code>ABPersonViewController</code> for presenting a contact in the address book.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ABPersonViewController *)personViewControllerForRecordNumber:(NSNumber *)<em>number</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>number</code></th>
+						<td><p>The number of the record to display in the view controller</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A view controller that can be pushed or presented to show the user in the address book</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Generates a <code>ABPersonViewController</code> for presenting a contact in the address book.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/personViewControllerForRecordID:" title="personViewControllerForRecordID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/personViewControllerForRecordID:">&ndash;&nbsp;personViewControllerForRecordID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Generates a <code>ABPersonViewController</code> for presenting a contact in the address book.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ABPersonViewController *)personViewControllerForRecordID:(ABRecordID)<em>recordID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>recordID</code></th>
+						<td><p>The recordID of the record to display in the view controller</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A view controller that can be pushed or presented to show the user in the address book</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Generates a <code>ABPersonViewController</code> for presenting a contact in the address book.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/presentPersonWithRecordNumber:inViewController:" title="presentPersonWithRecordNumber:inViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentPersonWithRecordNumber:inViewController:">&ndash;&nbsp;presentPersonWithRecordNumber:inViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Presents an address book view for a record number</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)presentPersonWithRecordNumber:(NSNumber *)<em>number</em> inViewController:(UIViewController *)<em>viewController</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>number</code></th>
+						<td><p>The <code>NSNumber</code> for the person that needs to be displayed to the user</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>viewController</code></th>
+						<td><p>The view controller that wishes to present the picker
+*</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Presents an address book view for a record number</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/presentPersonwithRecordID:inViewController:" title="presentPersonwithRecordID:inViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentPersonwithRecordID:inViewController:">&ndash;&nbsp;presentPersonwithRecordID:inViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Presents an address book view for a record ID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)presentPersonwithRecordID:(ABRecordID)<em>recordID</em> inViewController:(UIViewController *)<em>viewController</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>recordID</code></th>
+						<td><p>The ABRecordID for the person that needs to be displayed to the user</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>viewController</code></th>
+						<td><p>The view controller that wishes to present the picker
+*</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Presents an address book view for a record ID</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peopleForArrayOfIdentifiers:" title="peopleForArrayOfIdentifiers:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peopleForArrayOfIdentifiers:">&ndash;&nbsp;peopleForArrayOfIdentifiers:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Extracts an array of RCHPerson objects for the provided identifiers</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)peopleForArrayOfIdentifiers:(NSArray *)<em>array</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>array</code></th>
+						<td><p>An array of NSNumber objects that identify contacts in the addressbook database</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array of <a href="../Classes/TSCPerson.html"><code>TSCPerson</code></a> objects</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Extracts an array of RCHPerson objects for the provided identifiers</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addressbookIdsforPeople:" title="addressbookIdsforPeople:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addressbookIdsforPeople:">&ndash;&nbsp;addressbookIdsforPeople:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Extracts an array of Addressbook Ids objects for the provided identifiers</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)addressbookIdsforPeople:(NSArray *)<em>people</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>people</code></th>
+						<td><p>An array of <code>TSCPeople</code> objects</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array of NSNumbers that identify contacts in the addressbook database</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Extracts an array of Addressbook Ids objects for the provided identifiers</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCContactsController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 3 SIDED CUBE DESIGN LTD. All rights reserved. Updated: 2015-03-16</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

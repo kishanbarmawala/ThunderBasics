@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>UIColor(TSCColor) Category Reference</title>
+	<title>TSCToastViewController Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -54,13 +54,13 @@
 
 	
 	
-
-	
-	<optgroup label="Class Methods">
+	<optgroup label="Properties">
 		
-		<option value="//api/name/colorWithHexString:">+ colorWithHexString:</option>
+		<option value="//api/name/statusBarStyle">statusBarStyle</option>
 		
 	</optgroup>
+	
+
 	
 
 	
@@ -77,13 +77,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">UIColor(TSCColor) Category Reference</h1>
+					<h1 class="title">TSCToastViewController Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
+	<th>Inherits from</th>
+	<td>UIViewController</td>
+</tr><tr>
 	<th>Declared in</th>
-	<td>UIColor+TSCColor.h<br />UIColor+TSCColor.m</td>
+	<td>TSCToastViewController.h<br />TSCToastViewController.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -93,7 +96,13 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A wrapper on <code>UIColor</code> which adds useful methods.</p>
+						<p>This class is created and used automatically by a <a href="../Classes/TSCToastView.html"><code>TSCToastView</code></a> when it is presented.</p>
+
+<p>Toasts are displayed inside this view.</p>
+
+<p>This view is needed because in order to present a toast above everything else a new UIWindow is created and displayed, and a window must have root view controller.</p>
+
+<p>This root view controller allows us to access and use the <a href="#//api/name/statusBarStyle">statusBarStyle</a></p>
 					</div>
 					
 					
@@ -109,8 +118,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/colorWithHexString:" title="colorWithHexString:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/colorWithHexString:">+&nbsp;colorWithHexString:</a></code>
+	<a name="//api/name/statusBarStyle" title="statusBarStyle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/statusBarStyle">&nbsp;&nbsp;statusBarStyle</a></code>
 </h3>
 
 	<div class="method-info">
@@ -120,26 +129,14 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns a UIColor for a given hex string.</p>
+				<p>The current status bar style of the view</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (UIColor *)colorWithHexString:(NSString *)<em>hexString</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) UIStatusBarStyle statusBarStyle</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>hexString</code></th>
-						<td><p>The hex string to return a <code>UIColor</code> instance of.</p></td>
-					</tr>
-				
-				</table>
-			</div>
 			
 
 			
@@ -149,7 +146,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns a UIColor for a given hex string.</p>
+				<p>The current status bar style of the view</p>
 			</div>
 			
 
@@ -160,7 +157,7 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">UIColor+TSCColor.h</code></p>
+				<p><code class="declared-in-ref">TSCToastViewController.h</code></p>
 			</div>
 			
 			

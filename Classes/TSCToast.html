@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>TSCAnnotation Protocol Reference</title>
+	<title>TSCToast Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -54,21 +54,23 @@
 
 	
 	
-
-	
-
-	
-	<optgroup label="Instance Methods">
+	<optgroup label="Properties">
 		
-		<option value="//api/name/childAnnotations">- childAnnotations</option>
+		<option value="//api/name/isAsynchronous">isAsynchronous</option>
 		
-		<option value="//api/name/parentAnnotation">- parentAnnotation</option>
+		<option value="//api/name/isExecuting">isExecuting</option>
 		
-		<option value="//api/name/setChildAnnotations:">- setChildAnnotations:</option>
+		<option value="//api/name/isFinished">isFinished</option>
 		
-		<option value="//api/name/setParentAnnotation:">- setParentAnnotation:</option>
+		<option value="//api/name/presentingView">presentingView</option>
+		
+		<option value="//api/name/toastView">toastView</option>
 		
 	</optgroup>
+	
+
+	
+
 	
 	
 </select>
@@ -83,16 +85,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">TSCAnnotation Protocol Reference</h1>
+					<h1 class="title">TSCToast Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Conforms to</th>
-	<td>MKAnnotation</td>
+	<th>Inherits from</th>
+	<td>NSOperation</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>TSCAnnotation.h</td>
+	<td>TSCToast.h<br />TSCToast.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -102,7 +104,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>An extenstion of the <code>MKAnnotation</code> protocol used for grouping annotations on a map view</p>
+						<p>An instance of a toast operation to be presented to the user</p>
 					</div>
 					
 					
@@ -118,9 +120,9 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/parentAnnotation" title="parentAnnotation"></a>
-	<h3 class="method-title"><code><a href="#//api/name/parentAnnotation">&ndash;&nbsp;parentAnnotation</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/toastView" title="toastView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toastView">&nbsp;&nbsp;toastView</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -129,12 +131,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns the parent annotation of the annotation.</p>
+				<p>The view that will be displayed when the toast operation is begun</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id&lt;TSCAnnotation&gt;)parentAnnotation</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) TSCToastView *toastView</code></div>
 
 		    
 			
@@ -146,7 +148,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns the parent annotation of the annotation.</p><p>This will only be set if the annotation is within an annotation cluster.</p>
+				<p>The view that will be displayed when the toast operation is begun</p><p>This must be an instance of <a href="../Classes/TSCToastView.html"><code>TSCToastView</code></a></p>
 			</div>
 			
 
@@ -157,16 +159,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">TSCAnnotation.h</code></p>
+				<p><code class="declared-in-ref">TSCToast.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setParentAnnotation:" title="setParentAnnotation:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setParentAnnotation:">&ndash;&nbsp;setParentAnnotation:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/presentingView" title="presentingView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentingView">&nbsp;&nbsp;presentingView</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -175,26 +177,14 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Sets the parent annotation of the annotation.</p>
+				<p>The view that will present the toast</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setParentAnnotation:(id&lt;TSCAnnotation&gt;)<em>annotation</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) UIView *presentingView</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>annotation</code></th>
-						<td><p>The annotation to group the annotation into.</p></td>
-					</tr>
-				
-				</table>
-			</div>
 			
 
 			
@@ -204,7 +194,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Sets the parent annotation of the annotation.</p>
+				<p>The view that will present the toast</p>
 			</div>
 			
 
@@ -215,16 +205,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">TSCAnnotation.h</code></p>
+				<p><code class="declared-in-ref">TSCToast.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/childAnnotations" title="childAnnotations"></a>
-	<h3 class="method-title"><code><a href="#//api/name/childAnnotations">&ndash;&nbsp;childAnnotations</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/isExecuting" title="isExecuting"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isExecuting">&nbsp;&nbsp;isExecuting</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -233,12 +223,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Returns an array of the child annotations of the annotation.</p>
+				<p>Whether or not the operation is currently being executed</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)childAnnotations</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isExecuting</code></div>
 
 		    
 			
@@ -250,7 +240,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns an array of the child annotations of the annotation.</p>
+				<p>Whether or not the operation is currently being executed</p>
 			</div>
 			
 
@@ -261,16 +251,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">TSCAnnotation.h</code></p>
+				<p><code class="declared-in-ref">TSCToast.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setChildAnnotations:" title="setChildAnnotations:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setChildAnnotations:">&ndash;&nbsp;setChildAnnotations:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/isFinished" title="isFinished"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isFinished">&nbsp;&nbsp;isFinished</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -279,26 +269,14 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Sets the child annotations of the annotation.</p>
+				<p>Whether or not the operation is finished</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setChildAnnotations:(NSArray *)<em>childAnnotations</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isFinished</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>childAnnotations</code></th>
-						<td><p>an array of annotations to be grouped into this annotation.</p></td>
-					</tr>
-				
-				</table>
-			</div>
 			
 
 			
@@ -308,7 +286,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Sets the child annotations of the annotation.</p>
+				<p>Whether or not the operation is finished</p>
 			</div>
 			
 
@@ -319,7 +297,58 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">TSCAnnotation.h</code></p>
+				<p><code class="declared-in-ref">TSCToast.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isAsynchronous" title="isAsynchronous"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isAsynchronous">&nbsp;&nbsp;isAsynchronous</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Whether or not the operation is to be completed asynchronously</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL isAsynchronous</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>FALSE</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Whether or not the operation is to be completed asynchronously</p><p>This property will always be FALSE</p><div class="warning"><p><strong>Warning:</strong> Do not override this method</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TSCToast.h</code></p>
 			</div>
 			
 			
