@@ -9,30 +9,21 @@
 #import "TSCPerson.h"
 #import "TSCContactsController.h"
 
-typedef NS_ENUM(NSUInteger, TSCPersonSource) {
-    TSCPersonSourceABAddressBook = 0,
-    TSCPersonSourceContactsFramework = 1
-};
-
 @interface TSCPerson ()
-
-@property (nonatomic, assign) TSCPersonSource source;
 
 @end
 
 @implementation TSCPerson
 
-- (instancetype)initWithContact:(CNContact *)contact
+- (instancetype)initWithABRecordRef:(ABRecordRef)ref
 {
     if (self = [super init]) {
         
-        self.source = TSCPersonSourceContactsFramework;
-        [self updateWithCNContact:contact];
-        
-        self.observer = [[NSNotificationCenter defaultCenter] addObserverForName:TSCAddressBookChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        [self updateWithABRecordRef:ref];
+        self.observer = [[NSNotificationCenter defaultCenter] addObserverForName:TSCAddressBookChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
             
             TSCContactsController *contactsController = [TSCContactsController sharedController];
-            [self updateWithCNContact:[contactsController contactForIdentifier:self.recordIdentifier]];
+            [self updateWithABRecordRef:[contactsController recordRefForRecordID:[contactsController recordIDForNumber:self.recordNumber]]];
         }];
     }
     return self;
@@ -43,119 +34,119 @@ typedef NS_ENUM(NSUInteger, TSCPersonSource) {
     [[NSNotificationCenter defaultCenter] removeObserver:self.observer];
 }
 
-- (void)updateWithCNContact:(CNContact *)contact
+- (void)updateWithABRecordRef:(ABRecordRef)ref
 {
     self.mobileNumber = nil;
+    self.firstName = nil;
+    self.lastName = nil;
+    self.numbers = nil;
     self.email = nil;
     self.photo = nil;
     self.largeImage = nil;
+    self.recordNumber = nil;
     self.hasPlaceholderImage = false;
     
-    self.recordIdentifier = contact.identifier;
-    self.firstName = contact.givenName.length > 0 ? contact.givenName : nil;
-    self.lastName = contact.familyName.length > 0 ? contact.familyName : nil;
-    self.companyName = contact.organizationName.length > 0 ? contact.organizationName : nil;
-    
-    if (!self.firstName && !self.lastName) {
-        self.firstName = contact.nickname.length > 0 ? contact.nickname : nil;
+    CFTypeRef firstNameRef = ABRecordCopyValue(ref, kABPersonFirstNameProperty);
+    self.firstName = (__bridge NSString *)firstNameRef;
+    if (firstNameRef) {
+        CFRelease(firstNameRef);
     }
     
-    NSMutableArray *phoneNumbers = [NSMutableArray new];
-    for (CNLabeledValue *phoneNumberLabel in contact.phoneNumbers) {
+    CFTypeRef lastNameRef = ABRecordCopyValue(ref, kABPersonLastNameProperty);
+    self.lastName = (__bridge NSString *)lastNameRef;
+    if (lastNameRef) {
+        CFRelease(lastNameRef);
+    }
+    
+    ABMultiValueRef phoneRef = ABRecordCopyValue(ref, kABPersonPhoneProperty);
+    CFArrayRef numbersRef = ABMultiValueCopyArrayOfAllValues(phoneRef);
+    NSArray *numbers = (__bridge NSArray *)numbersRef;
+    self.numbers = numbers;
+    
+    if (phoneRef) {
+        CFRelease(phoneRef);
+    }
+    if (numbersRef) {
+        CFRelease(numbersRef);
+    }
+    
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(ref, kABPersonPhoneProperty);
+    for (CFIndex i = 0; i < ABMultiValueGetCount(phoneNumbers); i++) {
         
-        CNPhoneNumber *number = phoneNumberLabel.value;
-        [phoneNumbers addObject:number.stringValue];
+        CFStringRef numberRef = ABMultiValueCopyValueAtIndex(phoneNumbers, i);
+        CFStringRef locLabel = ABMultiValueCopyLabelAtIndex(phoneNumbers, i);
+        NSString *phoneNumber = (__bridge NSString *)numberRef;
         
-        if ([phoneNumberLabel.label isEqualToString:CNLabelPhoneNumberiPhone] || [phoneNumberLabel.label isEqualToString:CNLabelPhoneNumberMobile]) {
-            self.mobileNumber = number.stringValue;
+        
+        if (CFStringCompare(locLabel, kABPersonPhoneMobileLabel, 0) == kCFCompareEqualTo || CFStringCompare(locLabel, kABPersonPhoneIPhoneLabel, 0) == kCFCompareEqualTo) {
+            self.mobileNumber = phoneNumber;
+        }
+        
+        if (numberRef) {
+            CFRelease(numberRef);
+        }
+        if (locLabel) {
+            CFRelease(locLabel);
         }
     }
-    self.numbers = phoneNumbers;
-    
-    if (contact.emailAddresses.firstObject) {
-        
-        CNLabeledValue *emailAddress = contact.emailAddresses.firstObject;
-        self.email = emailAddress.value;
+    if (phoneNumbers) {
+        CFRelease(phoneNumbers);
     }
     
-    if (contact.imageData) {
-        self.largeImage = [UIImage imageWithData:contact.imageData];
+    ABMultiValueRef emailsPropertyRef = ABRecordCopyValue(ref, kABPersonEmailProperty);
+    CFArrayRef emailsRef = ABMultiValueCopyArrayOfAllValues(emailsPropertyRef);
+    NSArray *emails = (__bridge NSArray *)emailsRef;
+    self.email = [emails firstObject];
+    if (emailsPropertyRef) {
+        CFRelease(emailsPropertyRef);
+    }
+    if (emailsRef) {
+        CFRelease(emailsRef);
     }
     
-    if (contact.thumbnailImageData) {
-        self.photo = [UIImage imageWithData:contact.thumbnailImageData];
+    CFDataRef photoRef = ABPersonCopyImageDataWithFormat(ref, kABPersonImageFormatThumbnail);
+    NSData *photoData = (__bridge NSData *)photoRef;
+    self.photo = [UIImage imageWithData:photoData];
+    if (photoRef) {
+        CFRelease(photoRef);
     }
+    
+    
+    CFDataRef originalPhotoRef = ABPersonCopyImageDataWithFormat(ref, kABPersonImageFormatOriginalSize);
+    NSData *originalPhotoData = (__bridge NSData *)originalPhotoRef;
+    self.largeImage = [UIImage imageWithData:originalPhotoData];
+    if (originalPhotoRef) {
+        CFRelease(originalPhotoRef);
+    }
+    
+    self.recordNumber = [NSNumber numberWithInt:(int)ABRecordGetRecordID(ref)];
     
     if (!self.photo) {
-        
         self.hasPlaceholderImage = YES;
-        self.photo = [self contactPlaceholderWithInitials:self.initials];
+        self.photo = [self contactPlaceholderWithIntitials:self.initials];
     }
 }
 
-- (void)updateWithPerson:(TSCPerson *)person
-{
-    self.firstName = person.firstName;
-    self.lastName = person.lastName;
-    self.mobileNumber = person.mobileNumber;
-    self.fullName = person.fullName;
-    self.numbers = person.numbers;
-    self.email = person.email;
-    self.photo = person.photo;
-    self.largeImage = person.largeImage;
-    self.hasPlaceholderImage = person.hasPlaceholderImage;
-}
-
-- (void)setFirstName:(NSString *)firstName
-{
-    _firstName = firstName;
-    [self updateFullName];
-}
-
-- (void)setLastName:(NSString *)lastName
-{
-    _lastName = lastName;
-    [self updateFullName];
-}
-
-- (void)updateFullName
+- (NSString *)fullName
 {
     if (self.firstName && self.lastName) {
-        self.fullName = [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
-    } else if (self.firstName) {
-        self.fullName = self.firstName;
-    } else if (self.lastName) {
-        self.fullName = self.lastName;
+        return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
     }
+    
+    if (self.firstName) {
+        return self.firstName;
+    }
+    
+    if (self.lastName) {
+        return self.lastName;
+    }
+    
+    return nil;
 }
 
 - (NSString *)rowTitle
 {
-    if (self.fullName) {
-        return self.fullName;
-    }
-    
-    if (self.mobileNumber) {
-        return self.mobileNumber;
-    }
-    
-    if (self.numbers.firstObject) {
-        return self.numbers.firstObject;
-    }
-    
-    if (self.mobileNumber) {
-        return self.mobileNumber;
-    }
-    
-    if (self.numbers.firstObject) {
-        return self.numbers.firstObject;
-    }
-    
-    if (self.email) {
-        return self.email;
-    }
-    
-    return nil;
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
 }
 
 - (NSString *)rowSubtitle
@@ -184,20 +175,12 @@ typedef NS_ENUM(NSUInteger, TSCPersonSource) {
         [intialString appendString:[self.lastName substringToIndex:1]];
     }
     
-    if (self.companyName.length > 0 && intialString.length == 0) {
-        [intialString appendString:[self.companyName substringToIndex:1]];
-    }
-    
-    if (intialString.length == 0) {
-        intialString = [@"?" mutableCopy];
-    }
-    
     return intialString;
 }
 
 #pragma mark - Image generation
 
-- (UIImage *)contactPlaceholderWithInitials:(NSString *)initials
+- (UIImage *)contactPlaceholderWithIntitials:(NSString *)initials
 {
     CGRect rect = CGRectMake(0, 0, 126, 126);
     
@@ -231,11 +214,5 @@ typedef NS_ENUM(NSUInteger, TSCPersonSource) {
     
     return image;
 }
-
-- (UIImage *)contactPlaceholderWithIntitials:(NSString *)initials
-{
-    return [self contactPlaceholderWithInitials:initials];
-}
-
 
 @end
