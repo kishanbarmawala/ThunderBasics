@@ -63,6 +63,7 @@
 		B18AEB381BCFC56A00BEB225 /* UIViewController+Dismiss.h in Headers */ = {isa = PBXBuildFile; fileRef = B18AEB361BCFC56A00BEB225 /* UIViewController+Dismiss.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B18AEB391BCFC56A00BEB225 /* UIViewController+Dismiss.m in Sources */ = {isa = PBXBuildFile; fileRef = B18AEB371BCFC56A00BEB225 /* UIViewController+Dismiss.m */; };
 		B19C53371D8B458B00B30A35 /* TSCDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6CFA71C4E5BC300CDC978 /* TSCDesignableView.swift */; };
+		B1AFEA3B202C7842005195D0 /* MKMapView+SwiftAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AFEA3A202C7842005195D0 /* MKMapView+SwiftAnnotations.swift */; };
 		B1B6CF731C4E44FC00CDC978 /* UIImage+ImageEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = B1B6CF6F1C4E44FC00CDC978 /* UIImage+ImageEffects.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1B6CF741C4E44FC00CDC978 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B6CF701C4E44FC00CDC978 /* UIImage+ImageEffects.m */; };
 		B1B6CF751C4E44FC00CDC978 /* UIImage+Resize.h in Headers */ = {isa = PBXBuildFile; fileRef = B1B6CF711C4E44FC00CDC978 /* UIImage+Resize.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -182,6 +183,7 @@
 		B18AEB331BCFB81E00BEB225 /* UIWindow+VisibleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+VisibleViewController.m"; sourceTree = "<group>"; };
 		B18AEB361BCFC56A00BEB225 /* UIViewController+Dismiss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Dismiss.h"; sourceTree = "<group>"; };
 		B18AEB371BCFC56A00BEB225 /* UIViewController+Dismiss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Dismiss.m"; sourceTree = "<group>"; };
+		B1AFEA3A202C7842005195D0 /* MKMapView+SwiftAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+SwiftAnnotations.swift"; sourceTree = "<group>"; };
 		B1B6CF6F1C4E44FC00CDC978 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		B1B6CF701C4E44FC00CDC978 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		B1B6CF711C4E44FC00CDC978 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 				C272EFBE19C8325D004BD339 /* TSCAnnotation.h */,
 				C272EFC919C8325D004BD339 /* TSCMapView.h */,
 				C272EFCA19C8325D004BD339 /* TSCMapView.m */,
+				B1AFEA3A202C7842005195D0 /* MKMapView+SwiftAnnotations.swift */,
 			);
 			name = Maps;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				B13778DD20289820006FE6D5 /* UIView+AutoLayout.swift in Sources */,
 				B12BD5E01C48052000D07A58 /* TSCLoadingButton.swift in Sources */,
 				B11063B41F41ABC6003E5814 /* Navigation.swift in Sources */,
+				B1AFEA3B202C7842005195D0 /* MKMapView+SwiftAnnotations.swift in Sources */,
 				C272EFEF19C8325D004BD339 /* TSCAppInfoController.m in Sources */,
 				B1B6CF801C4E473B00CDC978 /* CAGradientLayer+AutoGradient.m in Sources */,
 				C272EFE119C8325D004BD339 /* NSArray+TSCArray.m in Sources */,
