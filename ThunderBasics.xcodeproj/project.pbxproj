@@ -81,6 +81,10 @@
 		B1E3C5DD1B626DE5005CC1C1 /* TSCSingleRequestLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E3C5DB1B626DE5005CC1C1 /* TSCSingleRequestLocationManager.m */; };
 		B1E3C5E41B6287B9005CC1C1 /* UILabel+TSCLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B1E3C5E21B6287B9005CC1C1 /* UILabel+TSCLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1E3C5E51B6287B9005CC1C1 /* UILabel+TSCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E3C5E31B6287B9005CC1C1 /* UILabel+TSCLabel.m */; };
+		B1FE3A4222282DFF00AB452F /* Locale+3166_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE3A4122282DFF00AB452F /* Locale+3166_1.swift */; };
+		B1FE3A4322282DFF00AB452F /* Locale+3166_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE3A4122282DFF00AB452F /* Locale+3166_1.swift */; };
+		B1FE3A4522282EB700AB452F /* iso3166_1.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B1FE3A4422282EB700AB452F /* iso3166_1.bundle */; };
+		B1FE3A4622282EB700AB452F /* iso3166_1.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B1FE3A4422282EB700AB452F /* iso3166_1.bundle */; };
 		C272EFE819C8325D004BD339 /* ThunderBasics.h in Headers */ = {isa = PBXBuildFile; fileRef = C272EFB919C8325D004BD339 /* ThunderBasics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C272EFFA19C8325D004BD339 /* TSCObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C272EFCB19C8325D004BD339 /* TSCObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C272EFFB19C8325D004BD339 /* TSCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C272EFCC19C8325D004BD339 /* TSCObject.m */; };
@@ -157,6 +161,8 @@
 		B1E3C5DB1B626DE5005CC1C1 /* TSCSingleRequestLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCSingleRequestLocationManager.m; sourceTree = "<group>"; };
 		B1E3C5E21B6287B9005CC1C1 /* UILabel+TSCLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+TSCLabel.h"; sourceTree = "<group>"; };
 		B1E3C5E31B6287B9005CC1C1 /* UILabel+TSCLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+TSCLabel.m"; sourceTree = "<group>"; };
+		B1FE3A4122282DFF00AB452F /* Locale+3166_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+3166_1.swift"; sourceTree = "<group>"; };
+		B1FE3A4422282EB700AB452F /* iso3166_1.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iso3166_1.bundle; sourceTree = "<group>"; };
 		C272EF8419C831AB004BD339 /* ThunderBasics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThunderBasics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C272EF8F19C831AC004BD339 /* ThunderBasicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThunderBasicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C272EF9219C831AC004BD339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -261,7 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				980AE1D32208968800540E8E /* Locale+ISO639_2.swift */,
+				B1FE3A4422282EB700AB452F /* iso3166_1.bundle */,
 				980AE1D5220896A700540E8E /* iso639_2.bundle */,
+				B1FE3A4122282DFF00AB452F /* Locale+3166_1.swift */,
 			);
 			path = "Locale Language Codes";
 			sourceTree = "<group>";
@@ -628,6 +636,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1FE3A4622282EB700AB452F /* iso3166_1.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				980AE1D6220896A700540E8E /* iso639_2.bundle in Resources */,
+				B1FE3A4522282EB700AB452F /* iso3166_1.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1FE3A4322282DFF00AB452F /* Locale+3166_1.swift in Sources */,
 				B1D85F7C1DA43B6E00469588 /* NSObject+AddedProperties.m in Sources */,
 				B13779302029F1F3006FE6D5 /* MapView+Fitting.swift in Sources */,
 				B16234D01C91F6D7001669BA /* NSColor+TSCColor.m in Sources */,
@@ -693,6 +704,7 @@
 				49CF132B1AB6D88A00AA5971 /* TSCPerson.m in Sources */,
 				B1E3C5E51B6287B9005CC1C1 /* UILabel+TSCLabel.m in Sources */,
 				C272F00119C8325D004BD339 /* UIColor+TSCColor.m in Sources */,
+				B1FE3A4222282DFF00AB452F /* Locale+3166_1.swift in Sources */,
 				B13778DD20289820006FE6D5 /* UIView+AutoLayout.swift in Sources */,
 				B12BD5E01C48052000D07A58 /* TSCLoadingButton.swift in Sources */,
 				B11063B41F41ABC6003E5814 /* Navigation.swift in Sources */,
