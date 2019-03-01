@@ -8,16 +8,39 @@
 
 import Foundation
 
-/// Details the different types of error that may occur while converting the language codes.
-///
-/// - NoBaseLanguageCode: For some reason, the locale object didn't have an ISO639-1 language code.
-/// - NoMatchingLanguageCode: Mapping the ISO639-1 language code to the correct ISO639-2 language code failed, as no match was available.
-enum ISO639_2_Error: LocalizedError {
-    case NoBaseLanguageCode
-    case NoMatchingLanguageCode
-}
-
 extension Locale {
+    
+    /// An enum representation of available language formats
+    ///
+    /// - ISO639_1: ISO639-1 spec (e.g: "en", "es", "de")
+    /// - ISO639_2: ISO638-2 spec (e.g: "eng", "spa", "deu")
+    public enum LanguageFormat: String {
+        case ISO639_1 = "ISO 639-1"
+        case ISO639_2 = "ISO 639-2"
+    }
+    
+    /// An enum representation of available region formats
+    ///
+    /// - ISO3166_1_alpha_2: ISO3166-1 alpha-2 spec (e.g: "GB", "US", "ES")
+    /// - ISO3166_1_alpha_3: ISO3166-1 alpha-3 spec (e.g: "GBR", "USA", "ESP")
+    /// - ISO3166_1_numeric: ISO3166-1 numeric spec (e.g: "826", "840", "724")
+    public enum RegionFormat: String {
+        case ISO3166_1_alpha_2 = "ISO 3166-1 alpha-2"
+        case ISO3166_1_alpha_3 = "ISO 3166-1 alpha-3"
+        case ISO3166_1_numeric = "ISO 3166-1 numeric"
+    }
+    
+    /// Converts the locale to the specified formats
+    ///
+    /// - Parameters:
+    ///   - languageFormat: The language format to use when converting
+    ///   - regionFormat: The region format to use when converting
+    ///
+    /// - Note: If the language or region isn't convertable to the given format for any reason then it will be left as is on the original `Locale`
+    /// - Returns: The converted locale.
+    public func convertedTo(languageFormat: LanguageFormat, regionFormat: RegionFormat) -> Locale {
+        
+    }
     
     /// Provides the mapping from ISO639-1 to ISO639-2 language codes, so Locale language codes can be converted.
     public static var iso639_2Dictionary: [String: String]? = {
