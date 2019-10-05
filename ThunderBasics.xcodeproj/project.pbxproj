@@ -47,6 +47,8 @@
 		B16234D21C91F775001669BA /* ThunderBasicsMac.h in Headers */ = {isa = PBXBuildFile; fileRef = B16234D11C91F775001669BA /* ThunderBasicsMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B16234EC1C91FA3C001669BA /* NSObject+AddedProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = B1B6CF891C4E47DB00CDC978 /* NSObject+AddedProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B163D2FE1FB33F6C00BF4CEC /* DynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163D2FD1FB33F6C00BF4CEC /* DynamicFont.swift */; };
+		B17CFDCA23489EDC002634CA /* earthquake_badge.png in Resources */ = {isa = PBXBuildFile; fileRef = B17CFDC923489EDC002634CA /* earthquake_badge.png */; };
+		B17CFDCE23489F67002634CA /* UIImage+ColorAnalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17CFDCD23489F67002634CA /* UIImage+ColorAnalysisTests.swift */; };
 		B1898CD1230D7A9000A1F5D1 /* AccessibilityRefreshingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1898CD0230D7A9000A1F5D1 /* AccessibilityRefreshingViewController.swift */; };
 		B190A858228DBCB600E44821 /* ThunderBasicsTests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190A857228DBCB600E44821 /* ThunderBasicsTests_macOS.swift */; };
 		B190A85A228DBCB600E44821 /* ThunderBasics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16234AB1C91F5E3001669BA /* ThunderBasics.framework */; };
@@ -123,6 +125,8 @@
 		B16234C41C91F625001669BA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B16234D11C91F775001669BA /* ThunderBasicsMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThunderBasicsMac.h; sourceTree = "<group>"; };
 		B163D2FD1FB33F6C00BF4CEC /* DynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFont.swift; sourceTree = "<group>"; };
+		B17CFDC923489EDC002634CA /* earthquake_badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earthquake_badge.png; sourceTree = "<group>"; };
+		B17CFDCD23489F67002634CA /* UIImage+ColorAnalysisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorAnalysisTests.swift"; sourceTree = "<group>"; };
 		B1898CD0230D7A9000A1F5D1 /* AccessibilityRefreshingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityRefreshingViewController.swift; sourceTree = "<group>"; };
 		B190A855228DBCB600E44821 /* ThunderBasicsTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ThunderBasicsTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B190A857228DBCB600E44821 /* ThunderBasicsTests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThunderBasicsTests_macOS.swift; sourceTree = "<group>"; };
@@ -432,6 +436,8 @@
 				C272EF9119C831AC004BD339 /* Supporting Files */,
 				B146C3CD2190978900A1DBCD /* UIColorHexStringTests.swift */,
 				980AE268220AFD8C00540E8E /* Locale+ISO639_2Tests.swift */,
+				B17CFDC923489EDC002634CA /* earthquake_badge.png */,
+				B17CFDCD23489F67002634CA /* UIImage+ColorAnalysisTests.swift */,
 			);
 			path = ThunderBasicsTests;
 			sourceTree = "<group>";
@@ -631,6 +637,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17CFDCA23489EDC002634CA /* earthquake_badge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +724,7 @@
 			files = (
 				B146C3CF2190978F00A1DBCD /* UIColor+HexString.swift in Sources */,
 				B146C3CE2190978900A1DBCD /* UIColorHexStringTests.swift in Sources */,
+				B17CFDCE23489F67002634CA /* UIImage+ColorAnalysisTests.swift in Sources */,
 				980AE269220AFD8C00540E8E /* Locale+ISO639_2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

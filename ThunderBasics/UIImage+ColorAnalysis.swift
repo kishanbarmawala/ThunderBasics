@@ -45,10 +45,14 @@ public class ImageColorAnalyzer {
         self.image = image
     }
     
-    /// Performs the image analysis
-    public func analyze() {
+    /// Performs the image analysis on the given image
+    ///
+    /// - Parameters:
+    ///   - pixelThreshold: A threshold for how mistimes a pixel has to occur for it to be included in the image analysis. Defaults to `2`.
+    ///   - leftEdgeOffset: The column of pixels of the image that should be considered the `left edge` of the image. This can be used when images contain transparent padding in order to not pick a transparent colour as the background colour
+    public func analyze(pixelThreshold: Int = 2, leftEdgeOffset: Int = 0) {
         
-        let colourColours = findEdgeColourIn(image)
+        let colourColours = findEdgeColourIn(image, pixelThreshold: pixelThreshold, leftEdgeOffset: leftEdgeOffset)
         backgroundColor = colourColours?.color
         
         guard let colours = colourColours?.colours, let backgroundColor = backgroundColor else {
@@ -59,43 +63,38 @@ public class ImageColorAnalyzer {
         secondaryColor = textColours?.secondary
         detailColor = textColours?.detail
     }
+
     
-    private func findEdgeColourIn(_ image: UIImage) -> (color: UIColor?, colours: NSCountedSet?)? {
+    private func findEdgeColourIn(_ image: UIImage, pixelThreshold: Int = 2, leftEdgeOffset: Int = 0) -> (color: UIColor?, colours: NSCountedSet?)? {
         
-        guard let imageRef = image.cgImage else { return nil }
+        let pixelsWide = Int(image.size.width)
+        let pixelsHigh = Int(image.size.height)
         
-        let pixelsWide = imageRef.width
-        let pixelsHigh = imageRef.height
+        guard let context = image.redrawnToDeviceRGBColorSpaceContext() else { return nil }
         
+        guard let pixelBuffer = context.data else { return nil }
+        
+        let pointer = pixelBuffer.bindMemory(to: UInt32.self, capacity: pixelsWide * pixelsHigh)
+        
+        let leftOffset = min(leftEdgeOffset, pixelsWide - 1)
         let imageColours = NSCountedSet(capacity: pixelsHigh * pixelsWide)
         let leftEdgeColours = NSCountedSet(capacity: pixelsHigh)
         
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bytesPerPixel = 4
-        let bytesPerRow = bytesPerPixel * pixelsWide
-        let bitsPerComponent = 8
-        
-        var rawData = [UInt8](repeating: 0, count: Int(pixelsHigh * pixelsWide * bytesPerPixel))
-        
-        guard let context = CGContext(data: &rawData, width: pixelsWide, height: pixelsHigh, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: imageRef.bitmapInfo.rawValue) else {
-            return nil
-        }
-        
-        context.draw(imageRef, in: CGRect(x: 0, y: 0, width: pixelsHigh, height: pixelsWide))
-        
+        // If we haven't been provided colours we calculate all pixels from the image, otherwise we're working recursively and we only need one pixel strip of colours
         for x in 0..<pixelsWide {
             for y in 0..<pixelsHigh {
                 
-                let byteIndex = (bytesPerRow * y) + x * bytesPerPixel
+                let pixel = pointer[y * pixelsWide + x]
                 
-                let red = CGFloat(rawData[byteIndex]) / 255.0
-                let green = CGFloat(rawData[byteIndex + 1]) / 255.0
-                let blue = CGFloat(rawData[byteIndex + 2]) / 255.0
-                let alpha = CGFloat(rawData[byteIndex + 3]) / 255.0
+                // Get pixel RGBA values
+                let r: CGFloat = CGFloat(UIImage.red(for: pixel))   / 255
+                let g: CGFloat = CGFloat(UIImage.green(for: pixel)) / 255
+                let b: CGFloat = CGFloat(UIImage.blue(for: pixel))  / 255
+                let a: CGFloat = CGFloat(UIImage.alpha(for: pixel)) / 255
                 
-                let colour = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+                let colour = UIColor(red: r, green: g, blue: b, alpha: a)
                 
-                if x == 0 {
+                if x == leftOffset {
                     leftEdgeColours.add(colour)
                 }
                 
@@ -108,7 +107,7 @@ public class ImageColorAnalyzer {
                 return nil
             }
             let count = leftEdgeColours.count(for: colour)
-            guard count > 2 else { return nil } // Prevent using random colours, threshold should be based in input image size
+            guard count > pixelThreshold else { return nil } // Prevent using random colours, threshold should be based in input image size
             return (colour, count)
         })
         
@@ -118,8 +117,8 @@ public class ImageColorAnalyzer {
         
         guard var proposedEdgeColour = countedColours.first else { return nil }
         
-        // Pick a proper colour over black and white
-        guard proposedEdgeColour.0.isNearBlackOrWhite else { return (proposedEdgeColour.0, imageColours) }
+        // Pick a proper colour over black and white or transparent
+        guard proposedEdgeColour.0.isNearBlackOrWhite || proposedEdgeColour.0.alpha == 0.0 else { return (proposedEdgeColour.0, imageColours) }
         
         for element in countedColours.enumerated() {
             
@@ -131,8 +130,8 @@ public class ImageColorAnalyzer {
             guard Double(nextColour.1) / Double(element.element.1) > 0.3 else {
                 break
             }
-                
-            guard !nextColour.0.isNearBlackOrWhite else {
+            
+            guard !nextColour.0.isNearBlackOrWhite, nextColour.0.alpha != 0.0 else {
                 continue
             }
             
@@ -213,11 +212,10 @@ public class ImageColorAnalyzer {
 
 extension UIImage {
     
-    /// Looks up a specific pixel in an image and gets it's color
+    /// Redraws the image to the device RGB color space, returning the context it was drawn to
     ///
-    /// - Parameter point: The point at which to select a pixel for
-    /// - Returns: The color of the selected pixel
-    public func pixelColorAt(_ point: CGPoint) -> UIColor? {
+    /// - Returns: The context the image was drawn to
+    fileprivate func redrawnToDeviceRGBColorSpaceContext() -> CGContext? {
         
         guard let cgImage = cgImage else { return nil }
         
@@ -240,37 +238,53 @@ extension UIImage {
         // Re-create the image to make sure the image is RGBA rather than it's original colour space
         context.draw(cgImage, in: CGRect(origin: .zero, size: size))
         
+        return context
+    }
+    
+    /// Looks up a specific pixel in an image and gets it's color
+    ///
+    /// - Parameter point: The point at which to select a pixel for
+    /// - Returns: The color of the selected pixel
+    public func pixelColorAt(_ point: CGPoint) -> UIColor? {
+        
+        guard let context = redrawnToDeviceRGBColorSpaceContext() else {
+            return nil
+        }
+        
+        let width = Int(size.width)
+        let height = Int(size.height)
+        
         guard let pixelBuffer = context.data else { return nil }
         
         let pointer = pixelBuffer.bindMemory(to: UInt32.self, capacity: width * height)
         let pixel = pointer[Int(point.y) * width + Int(point.x)]
         
         // Get pixel RGBA values
-        let r: CGFloat = CGFloat(red(for: pixel))   / 255
-        let g: CGFloat = CGFloat(green(for: pixel)) / 255
-        let b: CGFloat = CGFloat(blue(for: pixel))  / 255
-        let a: CGFloat = CGFloat(alpha(for: pixel)) / 255
+        let r: CGFloat = CGFloat(UIImage.red(for: pixel))   / 255
+        let g: CGFloat = CGFloat(UIImage.green(for: pixel)) / 255
+        let b: CGFloat = CGFloat(UIImage.blue(for: pixel))  / 255
+        let a: CGFloat = CGFloat(UIImage.alpha(for: pixel)) / 255
         
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
     
-    private func alpha(for pixelData: UInt32) -> UInt8 {
+    fileprivate class func alpha(for pixelData: UInt32) -> UInt8 {
         return UInt8((pixelData >> 24) & 255)
     }
     
-    private func red(for pixelData: UInt32) -> UInt8 {
+    fileprivate class func red(for pixelData: UInt32) -> UInt8 {
         return UInt8((pixelData >> 16) & 255)
     }
     
-    private func green(for pixelData: UInt32) -> UInt8 {
+    fileprivate class func green(for pixelData: UInt32) -> UInt8 {
         return UInt8((pixelData >> 8) & 255)
     }
     
-    private func blue(for pixelData: UInt32) -> UInt8 {
+    fileprivate class func blue(for pixelData: UInt32) -> UInt8 {
         return UInt8((pixelData >> 0) & 255)
     }
     
-    private func rgba(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8) -> UInt32 {
+    fileprivate class func rgba(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8) -> UInt32 {
         return (UInt32(alpha) << 24) | (UInt32(red) << 16) | (UInt32(green) << 8) | (UInt32(blue) << 0)
     }
 }
